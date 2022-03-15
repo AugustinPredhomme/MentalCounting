@@ -16,10 +16,10 @@
     <string name="bouton_deux" translatable="false">2</string>
     <string name="bouton_trois" translatable="false">3</string>
     <string name="bouton_zero" translatable="false">0</string>
-    <string name="bouton_effacer" translatable="false">AC</string>
+    <string name="bouton_effacer" translatable="false">⌫</string>
     <string name="bouton_parenthese_ouverte" translatable="false">(</string>
     <string name="bouton_parenthese_fermee" translatable="false">)</string>
-    <string name="bouton_Retour">Retour</string>
+    <string name="bouton_Retour" translatable="false">←</string>
     <string name="bouton_clear">Effacer</string>
     <string name="derniers_calculs_effectues_texte">5 derniers calculs :</string>
     <string name="derniers_calculs_effectues_1" translatable="false">3 x 2 = 6</string>
