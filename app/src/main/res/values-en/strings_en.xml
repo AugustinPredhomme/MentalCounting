@@ -2,7 +2,10 @@
 <resources>
     <string name="bouton_Calculer">Compute</string>
     <string name="bouton_Dernier_Calcul">Last Compute</string>
+
+    <string name="saisir">Input</string>
     <string name="bouton_Retour">Previous</string>
     <string name="bouton_clear">Clear</string>
+
     <string name="derniers_calculs_effectues_texte">Last 5 computes :</string>
 </resources>

@@ -24,6 +24,20 @@
             android:textSize="80sp"
             tools:layout_weight="1" />
 
+        <TextView
+            android:id="@+id/textviewInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoText="false"
+            android:backgroundTint="@color/teal_700"
+            android:drawableTint="@color/teal_200"
+            android:gravity="center_horizontal|center_vertical"
+            android:maxHeight="75dp"
+            android:minHeight="75dp"
+            android:shadowColor="#201E1E"
+            android:textAlignment="gravity"
+            android:textSize="34sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

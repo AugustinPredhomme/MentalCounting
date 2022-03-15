@@ -23,6 +23,7 @@
     <string name="bouton_effacer" translatable="false">⌫</string>
     <string name="bouton_menu" translatable="false">←</string>
 
+    <string name="saisir">Saisir</string>
     <string name="bouton_Retour">Retour</string>
     <string name="bouton_clear">Effacer</string>
 
