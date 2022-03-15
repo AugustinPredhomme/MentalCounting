@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void lancerActivityDernierCalcul() {
-        Intent intent = new Intent(this,DernierCalculActivity.class);
+        Intent intent = new Intent(this, DernierCalculActivity.class);
         startActivity(intent);
     }
 
