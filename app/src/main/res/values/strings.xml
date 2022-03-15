@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name" translatable="false">Calculatrice S4 WEB</string>
+    <string name="bouton_Calculer">Calculer</string>
+    <string name="bouton_Dernier_Calcul">Dernier Calcul</string>
+    <string name="bouton_multiplier" translatable="false">*</string>
+    <string name="bouton_diviser" translatable="false">/</string>
+    <string name="bouton_additionner" translatable="false">+</string>
+    <string name="bouton_soustraire" translatable="false">-</string>
+    <string name="bouton_sept" translatable="false">7</string>
+    <string name="bouton_huit" translatable="false">8</string>
+    <string name="bouton_neuf" translatable="false">9</string>
+    <string name="bouton_quatre" translatable="false">4</string>
+    <string name="bouton_cinq" translatable="false">5</string>
+    <string name="bouton_six" translatable="false">6</string>
+    <string name="bouton_un" translatable="false">1</string>
+    <string name="bouton_deux" translatable="false">2</string>
+    <string name="bouton_trois" translatable="false">3</string>
+    <string name="bouton_zero" translatable="false">0</string>
+    <string name="bouton_effacer" translatable="false">AC</string>
+    <string name="bouton_parenthese_ouverte" translatable="false">(</string>
+    <string name="bouton_parenthese_fermee" translatable="false">)</string>
+    <string name="bouton_Retour">Retour</string>
+    <string name="bouton_clear">Effacer</string>
+    <string name="derniers_calculs_effectues_texte">5 derniers calculs :</string>
+    <string name="derniers_calculs_effectues_1" translatable="false">3 x 2 = 6</string>
+    <string name="derniers_calculs_effectues_2" translatable="false">1 x 5 = 5</string>
+    <string name="derniers_calculs_effectues_3" translatable="false">(3 + 1) x 10 = 40</string>
+    <string name="derniers_calculs_effectues_4" translatable="false">3 x 4 = 12</string>
+    <string name="derniers_calculs_effectues_5" translatable="false">70 - 1 = 69</string>
+</resources>
