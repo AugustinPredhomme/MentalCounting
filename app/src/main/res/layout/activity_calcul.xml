@@ -112,11 +112,12 @@
             android:orientation="horizontal">
 
             <Button
+                android:id="@+id/bouton_menu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
                 android:layout_weight="2"
-                android:text="@string/bouton_Retour" />
+                android:text="@string/bouton_menu" />
 
             <Button
                 android:layout_width="match_parent"
