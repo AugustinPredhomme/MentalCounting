@@ -27,6 +27,9 @@
     <string name="bouton_Retour">Retour</string>
     <string name="bouton_clear">Effacer</string>
 
+    <string name="succes">Correct</string>
+    <string name="echec">Faux</string>
+
     <string name="derniers_calculs_effectues_texte">5 derniers calculs :</string>
 
     <string name="derniers_calculs_effectues_1" translatable="false">3 x 2 = 6</string>
