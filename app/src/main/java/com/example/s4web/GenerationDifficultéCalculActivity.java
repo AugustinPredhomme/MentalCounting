@@ -1,7 +1,5 @@
 package com.example.s4web;
 
-import java.util.Random;
-
 public class GenerationDifficultéCalculActivity {
     private double partieGauche;
     private double partieDroite;
@@ -10,30 +8,32 @@ public class GenerationDifficultéCalculActivity {
 
     public GenerationDifficultéCalculActivity(Difficulte difficulte){
         int typeDifficulte=0;
-        int maxAddition=0;
         int minAddition=0;
-        int maxMultiplication=0;
+        int maxAddition=0;
         int minMultiplication=0;
+        int maxMultiplication=0;
+
         if (difficulte == Difficulte.Facile) {
-            typeDifficulte= (int) (Math.random() * ( 2 - 0 ));
-            maxAddition = 20;
+            typeDifficulte= (int) (Math.random() * ( 4 - 0 ));
             minAddition = 1;
+            maxAddition = 20;
+            minMultiplication=1;
+            maxMultiplication=5;
 
         }
         if (difficulte == Difficulte.Moyen) {
             typeDifficulte= (int) (Math.random() * ( 4 - 0 ));
+            minAddition = -50;
             maxAddition = 50;
-            minAddition = 1;
-            maxMultiplication=10;
             minMultiplication=1;
+            maxMultiplication=20;
         }
         if (difficulte == Difficulte.Difficile) {
             typeDifficulte= (int) (Math.random() * ( 4 - 0 ));
-            maxAddition = 100;
-            minAddition = -100;
-            maxMultiplication=20;
-            minMultiplication=1;
-            //calcul complexe
+            minAddition = -50;
+            maxAddition = 50;
+            minMultiplication=-50;
+            maxMultiplication=50;
         }
         switch (typeDifficulte){
             case (0):
@@ -47,7 +47,7 @@ public class GenerationDifficultéCalculActivity {
                 partieGauche=minAddition+ (int) (Math.random() * ( maxAddition - minAddition ));
                 partieDroite=minAddition+ (int) (Math.random() * ( maxAddition - minAddition ));
                 if(difficulte!=Difficulte.Difficile){
-                    if(partieDroite>partieGauche){
+                    if(partieDroite>partieGauche){ //Inversion pour éviter les resultats négatifs
                         double tmp = partieDroite;
                         partieDroite=partieGauche;
                         partieGauche=tmp;
@@ -76,25 +76,25 @@ public class GenerationDifficultéCalculActivity {
 
     }
 
-    @java.lang.Override
+    @Override
     public String toString() {
-        String retour="";
+        String affichageCalcul="";
         if (partieGauche - Math.floor(partieGauche) > 0 && partieDroite - Math.floor(partieDroite) > 0) {
-            retour = partieGauche + " " + operateur + " " + partieDroite + " = ?";
+            affichageCalcul = partieGauche + " " + operateur + " " + partieDroite + " = ?";
         } else {
             if (partieDroite - Math.floor(partieDroite) > 0) {
-                retour = (int) partieGauche + " " + operateur + " " + partieDroite + " = ?";
+                affichageCalcul = (int) partieGauche + " " + operateur + " " + partieDroite + " = ?";
             } else {
                 if (partieGauche - Math.floor(partieGauche) > 0) {
-                    retour = (int) partieGauche + " " + operateur + " " + partieDroite + " = ?";
+                    affichageCalcul = (int) partieGauche + " " + operateur + " " + partieDroite + " = ?";
                 } else {
-                    retour = (int) partieGauche + " " + operateur + " " + (int) partieDroite + " = ?";
+                    affichageCalcul = (int) partieGauche + " " + operateur + " " + (int) partieDroite + " = ?";
                 }
             }
 
         }
 
-        return retour;
+        return affichageCalcul;
     }
 
     public double getResultat() {

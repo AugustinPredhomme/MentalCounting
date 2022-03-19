@@ -48,7 +48,7 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
 
-        difficulte = Difficulte.Facile;
+        difficulte = Difficulte.Moyen;
 
         Button boutonMenu = findViewById(R.id.bouton_menu);
         boutonMenu.setOnClickListener(view -> retourMenu());
@@ -96,63 +96,63 @@ public class CalculActivity extends AppCompatActivity {
     }
 
     public void deleteInput(View view){
-        TextView textView = findViewById(R.id.saisir);
-        String text = (String) textView.getText();
-        int lengh = text.length();
-        if(lengh>0){
-            String text2 = text.substring(0,lengh-1);
-            textView.setText(text2);
+        TextView saisir = findViewById(R.id.saisir);
+        String text = (String) saisir.getText();
+        int length = text.length();
+        if(length>0){
+            String text2 = text.substring(0,length-1);
+            saisir.setText(text2);
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void saisie(View view){
-        TextView textView1 = findViewById(R.id.saisir);
+        TextView saisir = findViewById(R.id.saisir);
         Button btn = (Button) view;
-        textView1.setText((String) textView1.getText()+btn.getText());
-        TextView textView2 = findViewById(R.id.msg_txt);
-        textView2.setVisibility(View.INVISIBLE);
+        saisir.setText((String) saisir.getText()+btn.getText());
+        TextView resultat = findViewById(R.id.msg_txt);
+        resultat.setVisibility(View.INVISIBLE);
 
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        VibrationEffect vbEffect = VibrationEffect.createOneShot(100,1);
-        vibrator.vibrate(vbEffect);
+        Vibrator vibration = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        VibrationEffect effetVibration = VibrationEffect.createOneShot(100,1);
+        vibration.vibrate(effetVibration);
     }
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void verification(View view){
-        TextView textView1 = findViewById(R.id.saisir);
-        String txt = (String) textView1.getText();
+        TextView saisir = findViewById(R.id.saisir);
+        String texte = (String) saisir.getText();
         boolean result;
         try {
-            result = (Double.parseDouble(txt)) == (GenerationDifficulté.getResultat());
+            result = (Double.parseDouble(texte)) == (GenerationDifficulté.getResultat());
         }
         catch (Exception e){
             result = false;
         }
-        TextView textView2 = findViewById(R.id.msg_txt);
-        final MediaPlayer mpFail = MediaPlayer.create(this, R.raw.failure);
-        final MediaPlayer mpSuccess = MediaPlayer.create(this, R.raw.success);
-        Vibrator vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-        VibrationEffect vbEffect;
+        TextView resultat = findViewById(R.id.msg_txt);
+        final MediaPlayer sonErreur = MediaPlayer.create(this, R.raw.failure);
+        final MediaPlayer sonSucces = MediaPlayer.create(this, R.raw.success);
+        Vibrator vibration = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        VibrationEffect effetVibration;
         if(result){
-            mpSuccess.start();
-            textView2.setTextColor(getResources().getColor(R.color.succes, this.getTheme()));
-            textView2.setText(getResources().getString(R.string.succes));
-            vbEffect = VibrationEffect.createOneShot(200,2);
+            sonSucces.start();
+            resultat.setTextColor(getResources().getColor(R.color.succes, this.getTheme()));
+            resultat.setText(getResources().getString(R.string.succes));
+            effetVibration = VibrationEffect.createOneShot(150,1);
             //set le score
         }
         else{
-            mpFail.start();
-            textView2.setTextColor(getResources().getColor(R.color.echec, this.getTheme()));
-            textView2.setText(getResources().getString(R.string.echec));
-            vbEffect = VibrationEffect.createOneShot(500,5);
+            sonErreur.start();
+            resultat.setTextColor(getResources().getColor(R.color.echec, this.getTheme()));
+            resultat.setText(getResources().getString(R.string.echec));
+            effetVibration = VibrationEffect.createOneShot(500,5);
             //set le score
         }
-        vibrator.vibrate(vbEffect);
-        textView2.setVisibility(View.VISIBLE);
+        vibration.vibrate(effetVibration);
+        resultat.setVisibility(View.VISIBLE);
         //Toast.makeText(this, "R attendue :"+op.getReponse()+", R donnée : "+txt, Toast.LENGTH_SHORT).show();
-        textView1.setText("");
+        saisir.setText("");
         generationCalcul();
     }
 
