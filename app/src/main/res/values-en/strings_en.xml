@@ -3,6 +3,8 @@
     <string name="bouton_Calculer">Compute</string>
     <string name="bouton_Dernier_Calcul">Last Compute</string>
 
+    <string name="bouton_validation">Send</string>
+
     <string name="saisir">Input</string>
     <string name="bouton_Retour">Previous</string>
     <string name="bouton_clear">Clear</string>

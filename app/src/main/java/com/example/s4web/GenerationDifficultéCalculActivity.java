@@ -14,12 +14,9 @@ public class GenerationDifficultéCalculActivity {
         int maxMultiplication=0;
 
         if (difficulte == Difficulte.Facile) {
-            typeDifficulte= (int) (Math.random() * ( 4 - 0 ));
+            typeDifficulte= (int) (Math.random() * ( 2 - 0 ));
             minAddition = 1;
             maxAddition = 20;
-            minMultiplication=1;
-            maxMultiplication=5;
-
         }
         if (difficulte == Difficulte.Moyen) {
             typeDifficulte= (int) (Math.random() * ( 4 - 0 ));

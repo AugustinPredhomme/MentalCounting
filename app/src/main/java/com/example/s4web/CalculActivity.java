@@ -15,29 +15,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import android.app.ActionBar;
-import android.content.Context;
-import android.content.Intent;
 import android.media.MediaPlayer;
-import android.os.Build;
-import android.os.VibrationEffect;
-import android.os.Vibrator;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-import android.widget.Toolbar;
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 public class CalculActivity extends AppCompatActivity {
     private GenerationDifficultéCalculActivity GenerationDifficulté;
@@ -48,10 +28,15 @@ public class CalculActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcul);
 
-        difficulte = Difficulte.Moyen;
+        difficulte = Difficulte.Facile;
 
-        Button boutonMenu = findViewById(R.id.bouton_menu);
-        boutonMenu.setOnClickListener(view -> retourMenu());
+        generationCalcul();
+        initBoutons();
+        Button bouton_validation = findViewById(R.id.bouton_validation);
+        bouton_validation.setOnClickListener(view -> verification(view));
+
+        /*Button boutonMenu = findViewById(R.id.bouton_menu);
+        boutonMenu.setOnClickListener(view -> retourMenu());*/
     }
 
     @Override
@@ -84,6 +69,7 @@ public class CalculActivity extends AppCompatActivity {
         listeBoutons.add(findViewById(R.id.bouton_sept));
         listeBoutons.add(findViewById(R.id.bouton_huit));
         listeBoutons.add(findViewById(R.id.bouton_neuf));
+        listeBoutons.add(findViewById(R.id.bouton_moins));
         for(Button b:listeBoutons){
             b.setOnClickListener(view -> saisie(view));
         }
@@ -91,8 +77,6 @@ public class CalculActivity extends AppCompatActivity {
         bouton_suppr.setOnClickListener(view -> deleteInput(view));
         TextView textView = findViewById(R.id.msg_txt);
         textView.setVisibility(View.INVISIBLE);
-
-
     }
 
     public void deleteInput(View view){
@@ -151,7 +135,6 @@ public class CalculActivity extends AppCompatActivity {
         }
         vibration.vibrate(effetVibration);
         resultat.setVisibility(View.VISIBLE);
-        //Toast.makeText(this, "R attendue :"+op.getReponse()+", R donnée : "+txt, Toast.LENGTH_SHORT).show();
         saisir.setText("");
         generationCalcul();
     }

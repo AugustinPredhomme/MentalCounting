@@ -20,6 +20,8 @@
     <string name="bouton_trois" translatable="false">3</string>
     <string name="bouton_zero" translatable="false">0</string>
 
+    <string name="bouton_validation">Valider</string>
+    <string name="bouton_moins" translatable="false">-</string>
     <string name="bouton_effacer" translatable="false">⌫</string>
     <string name="bouton_menu" translatable="false">←</string>
 
