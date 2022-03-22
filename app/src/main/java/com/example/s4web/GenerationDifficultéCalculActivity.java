@@ -94,6 +94,8 @@ public class GenerationDifficultéCalculActivity {
         return affichageCalcul;
     }
 
+    public String getOperateur(){ return String.valueOf(operateur);}
+
     public double getResultat() {
         return resultat;
     }

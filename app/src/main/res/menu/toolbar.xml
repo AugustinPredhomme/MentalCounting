@@ -3,9 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/bouton_calculer"
         android:title="@string/bouton_Calculer"
         app:showAsAction="always" />
     <item
+        android:id="@+id/bouton_effacer"
         android:title="@string/bouton_clear"
         app:showAsAction="withText" />
 </menu>

@@ -12,5 +12,5 @@
     <string name="succes">True</string>
     <string name="echec">False</string>
 
-    <string name="derniers_calculs_effectues_texte">Last 5 computes :</string>
+    <string name="annonce_Derniers_Calculs">Last 5 computes :</string>
 </resources>
