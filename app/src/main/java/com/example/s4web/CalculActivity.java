@@ -138,14 +138,14 @@ public class CalculActivity extends AppCompatActivity {
         final MediaPlayer sonSucces = MediaPlayer.create(this, R.raw.success);
         Vibrator vibration = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         VibrationEffect effetVibration;
-        if(result){
+        if(result){ //Si résultat bon
             sonSucces.start();
             resultat.setTextColor(getResources().getColor(R.color.succes, this.getTheme()));
             resultat.setText(getResources().getString(R.string.succes));
             effetVibration = VibrationEffect.createOneShot(150,1);
             score++;
         }
-        else{
+        else{ //Si résultat faux
             sonErreur.start();
             resultat.setTextColor(getResources().getColor(R.color.echec, this.getTheme()));
             resultat.setText(getResources().getString(R.string.echec));
@@ -156,6 +156,7 @@ public class CalculActivity extends AppCompatActivity {
                 score=0;
             }
         }
+        //Choix difficulté
         if (score<=10){
             difficulte = Difficulte.Facile;
         }else if(score<=20){
